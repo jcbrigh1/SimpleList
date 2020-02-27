@@ -121,4 +121,79 @@ class SimpleListTester {
 		assertEquals("9", myList.search(12)+"");
 		assertEquals("-1", myList.search(23)+"");
 	}
+	
+	@Test
+	void testAppend()
+	{
+		myList.append(19); 	//1
+		assertEquals("19", myList.toString());
+		myList.add(27);    	//2
+		assertEquals("27 19", myList.toString());
+		myList.add(30);		//3
+		myList.add(33);		//4
+		myList.append(53);	//5
+		assertEquals("33 30 27 19 53", myList.toString());
+		myList.add(9);		//6
+		myList.add(13);		//7
+		myList.add(26);		//8
+		myList.add(2);		//9
+		myList.append(9);	//10
+		myList.append(37);  //11
+		assertEquals("2 26 13 9 33 30 27 19 53 9 37", myList.toString());
+	}
+	
+	@Test
+	void testFirst()
+	{
+		assertEquals(-1, myList.first());
+		myList.add(5);
+		assertEquals(5, myList.first());
+		myList.add(49);
+		assertEquals(49, myList.first());
+	}
+	
+	@Test
+	void testLast()
+	{
+		assertEquals(-1, myList.last());
+		myList.add(5);
+		assertEquals(5, myList.last());
+		myList.add(49);
+		assertEquals(5, myList.last());
+		myList.append(32);
+		assertEquals(32, myList.last());
+	}
+	
+	@Test
+	void testSize()
+	{
+		assertEquals(10, myList.size());
+		myList.add(0);
+		myList.add(1);
+		myList.add(2);
+		myList.add(3);
+		myList.add(4);
+		myList.add(5);
+		myList.add(6);
+		myList.add(7);
+		myList.add(8);
+		myList.add(9);
+		myList.add(10);
+		assertEquals(15, myList.size());
+		myList.add(11);
+		myList.add(12);
+		myList.add(13);
+		myList.add(14);
+		myList.add(15);
+		myList.add(16);
+		assertEquals(22, myList.size());
+		myList.remove(16);
+		assertEquals(16, myList.size());
+		myList.remove(15);
+		myList.remove(14);
+		myList.remove(13);
+		myList.remove(12);
+		myList.remove(11);
+		assertEquals(12, myList.size());
+	}
 }

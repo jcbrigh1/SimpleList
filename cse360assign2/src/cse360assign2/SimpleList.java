@@ -143,5 +143,72 @@ public class SimpleList {
 		}
 		return location; //returning where the element is
 	}
-
+	
+	/**
+	 * append method will add the element to the 
+	 * end of the list and increase the size of the
+	 * array by 50% if needed
+	 * @param k, int to be appended
+	 */
+	public void append(int k)
+	{
+		if(count == list.length)
+		{
+			int[] newList = new int[(int) Math.floor(1.5*list.length)];
+			for(int i = 0; i<count; i++)
+			{
+				newList[i] = list[i];
+			}
+			
+			list = null;
+			list = newList;
+		}
+		list[count] = k;
+		count++;
+	}
+	
+	/**
+	 * first method will return the 
+	 * first element, if there is none
+	 * it will return -1
+	 * @param void
+	 * @return first, element at pos 0
+	 */
+	public int first()
+	{
+		int first = -1;
+		if(count>0)
+		{
+			first = list[0];
+		}
+		return first;
+	}
+	
+	/**
+	 * lest method will return the
+	 * last element, and should there
+	 * be none, it will return -1
+	 * @param void
+	 * @return last, last element
+	 */
+	public int last()
+	{
+		int last = -1;
+		if(count > 0)
+		{
+			last = list[count-1];
+		}
+		return last;
+	}
+	
+	/**
+	 * size method will return how 
+	 * many elements the array can hold
+	 * @param void
+	 * @return size
+	 */
+	public int size()
+	{
+		return list.length;
+	}
 }
