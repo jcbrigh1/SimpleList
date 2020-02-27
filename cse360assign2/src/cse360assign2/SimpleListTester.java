@@ -44,9 +44,9 @@ class SimpleListTester {
 		myList.add(91); //10
 		assertEquals("91 42 61 2 32 13 9 2 4 7", myList.toString());
 		myList.add(31);
-		assertEquals("31 91 42 61 2 32 13 9 2 4", myList.toString());
+		assertEquals("31 91 42 61 2 32 13 9 2 4 7", myList.toString());
 		myList.add(53);
-		assertEquals("53 31 91 42 61 2 32 13 9 2", myList.toString());	
+		assertEquals("53 31 91 42 61 2 32 13 9 2 4 7", myList.toString());	
 	}
 	
 	@Test
@@ -54,7 +54,6 @@ class SimpleListTester {
 	{
 		myList.add(7);	//1
 		myList.remove(7);
-		assertEquals("", myList.toString()); //testing with one element
 		myList.add(7);	//1
 		myList.add(4);	//2
 		myList.add(2);	//3
@@ -62,8 +61,19 @@ class SimpleListTester {
 		myList.add(13);	//5
 		myList.add(32);	//6
 		myList.add(2);	//7
-		myList.remove(9);
+		myList.remove(9);//6
 		assertEquals("2 32 13 2 4 7", myList.toString()); //testing with multiple elements
+		myList.add(68);	//7
+		myList.add(71);	//8
+		myList.add(53);	//9
+		myList.add(39);	//10
+		myList.add(56);	//11
+		myList.add(81);	//12
+		myList.add(19);	//13
+		myList.add(32);	//14
+		myList.add(45);	//15
+		myList.remove(81);
+		assertEquals("45 32 19 56 39 53 71 68 2 32 13 2 4 7", myList.toString());
 	}
 	
 	@Test
@@ -85,7 +95,7 @@ class SimpleListTester {
 		myList.add(43);	//10
 		assertEquals(10, myList.count());
 		myList.add(98); //11
-		assertEquals(10, myList.count());
+		assertEquals(11, myList.count());
 	}
 	
 	@Test

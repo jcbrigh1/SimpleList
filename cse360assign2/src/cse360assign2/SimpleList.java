@@ -39,9 +39,16 @@ public class SimpleList {
 		 * first element of the array
 		 */
 		else {
-			if(count == 10) 
-			{                
-				count--;	 
+			if(count == list.length) 
+			{         
+				int[] newList = new int[(int) Math.floor(1.5*list.length)];
+				for(int i = 0; i<count; i++)
+				{
+					newList[i] = list[i];
+				}
+				
+				list = null;
+				list = newList;
 			}
 			for(int i = count; i > 0; i--)
 			{
@@ -61,19 +68,32 @@ public class SimpleList {
 	{
 		int i = 0;
 		boolean removed = false;
+
 		while(removed == false && i < count)
 		{
 			if(list[i] == k) //bring elements back starting at element to be removed
 			{
-				for(int j = i; j <= count; j++)
+				for(int j = i; j < count-1; j++)
 				{
 					list[j] = list[j+1]; //element is the element in front
 				}
+				list[count-1] = 0;
 				removed = true;
 				count--;
 			}
 			i++;
 		}
+
+		if((double)count < (0.75 * list.length))
+		{
+			int[] newList = new int[(int)Math.floor(0.75*list.length)];
+			for(int j = 0; j<count; j++)
+			{
+				newList[j] = list[j];
+			}
+			list = newList;
+		}
+		
 	}
 	/**
 	 * count method returns the amount of elements in the array
@@ -92,7 +112,7 @@ public class SimpleList {
 	 */
 	public String toString() 
 	{
-		String str = "";
+			String str = "";
 		for(int i = 0; i < count - 1; i++)
 		{
 			str = str + list[i] + " "; //adding each element to the string
