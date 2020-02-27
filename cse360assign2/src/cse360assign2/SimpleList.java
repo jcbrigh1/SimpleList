@@ -150,7 +150,7 @@ public class SimpleList {
 	 * array by 50% if needed
 	 * @param k, int to be appended
 	 */
-/*	public void append(int k)
+	public void append(int k)
 	{
 		if(count == list.length)
 		{
@@ -173,7 +173,7 @@ public class SimpleList {
 	 * it will return -1
 	 * @param void
 	 * @return first, element at pos 0
-	 *
+	 */
 	public int first()
 	{
 		int first = -1;
@@ -190,7 +190,7 @@ public class SimpleList {
 	 * be none, it will return -1
 	 * @param void
 	 * @return last, last element
-	 *
+	 */
 	public int last()
 	{
 		int last = -1;
@@ -206,9 +206,9 @@ public class SimpleList {
 	 * many elements the array can hold
 	 * @param void
 	 * @return size
-	 *
+	 */
 	public int size()
 	{
 		return list.length;
-	}  */
+	}  
 }
