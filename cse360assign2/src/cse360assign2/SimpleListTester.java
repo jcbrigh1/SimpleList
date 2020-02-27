@@ -122,7 +122,7 @@ class SimpleListTester {
 		assertEquals("-1", myList.search(23)+"");
 	}
 	
-	@Test
+/*	@Test
 	void testAppend()
 	{
 		myList.append(19); 	//1
@@ -195,5 +195,5 @@ class SimpleListTester {
 		myList.remove(12);
 		myList.remove(11);
 		assertEquals(12, myList.size());
-	}
+	} */
 }
